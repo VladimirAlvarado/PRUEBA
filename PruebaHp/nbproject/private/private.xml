@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/GUASI/Documents/NetBeansProjects/PruebaHp/src/desafio2media/PRUEBA.java</file>
-            <file>file:/C:/Users/GUASI/Documents/NetBeansProjects/PruebaHp/src/desafio2media/Clases/Libro.java</file>
-            <file>file:/C:/Users/GUASI/Documents/NetBeansProjects/PruebaHp/src/desafio2media/conexion/DaoCd.java</file>
-            <file>file:/C:/Users/GUASI/Documents/NetBeansProjects/PruebaHp/src/desafio2media/conexion/DaoDvd.java</file>
-            <file>file:/C:/Users/GUASI/Documents/NetBeansProjects/PruebaHp/src/desafio2media/Clases/DVD.java</file>
-            <file>file:/C:/Users/GUASI/Documents/NetBeansProjects/PruebaHp/src/desafio2media/Clases/MaterialEscrito.java</file>
-            <file>file:/C:/Users/GUASI/Documents/NetBeansProjects/PruebaHp/src/desafio2media/conexion/DaoLibros.java</file>
+            <file>file:/C:/Users/kevin/Desktop/PRUEBA/PruebaHp/src/desafio2media/conexion/DaoLibros.java</file>
+            <file>file:/C:/Users/kevin/Desktop/PRUEBA/PruebaHp/src/desafio2media/conexion/DaoCd.java</file>
+            <file>file:/C:/Users/kevin/Desktop/PRUEBA/PruebaHp/src/desafio2media/Clases/Libro.java</file>
+            <file>file:/C:/Users/kevin/Desktop/PRUEBA/PruebaHp/src/desafio2media/PRUEBA.java</file>
         </group>
     </open-files>
 </project-private>
