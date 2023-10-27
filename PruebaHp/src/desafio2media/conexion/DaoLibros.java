@@ -5,7 +5,10 @@ import desafio2media.Clases.Libro;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,6 +25,7 @@ public class DaoLibros {
         String sql = "SELECT Id, Titulo, IdDirector, Duracion, IdGenero, Stock FROM materiales WHERE Id LIKE 'LIB%' AND Stock>0";
         return select(sql);
     }
+    
 
     private ArrayList<Libro> select(String sql) {
         ArrayList<Libro> Libros = new ArrayList<>();
@@ -37,6 +41,35 @@ public class DaoLibros {
             libros.setIdAutor(rs.getInt("IdAutor"));
         } catch (Exception e) {
         }
-         return null;
+         return Libros;
+    }
+    
+    public ArrayList<Libro> INSERTAll(){
+        String sql = "INSERT INTO materiales(IdTipo, Titulo, IdAutor, IdArtista,NumPag, IdEditorial, ISBN,AnioPublic,Stock) VALUES (?,?,?,?,?,?,?,?,?) SCOPE_IDENTITY() ";
+        return insert(sql);
+    }
+
+    private ArrayList<Libro> insert(String sql) {
+        ArrayList<Libro> Libros = new ArrayList<>();
+  private boolean insert( sql) {
+    try {
+        this.con=this.conectar.getConnection();
+        this.ps=con.prepareStatement(sql);
+        this.ps.executeUpdate();
+        con.commit();
+        return true;
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+        Logger.getLogger(DaoLibros.class.getName()).log(Level.SEVERE, null, ex);
+        return false;
+    }finally{
+        try {
+            ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoLibros.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conectar.close(con);
     }
 }
+}
+

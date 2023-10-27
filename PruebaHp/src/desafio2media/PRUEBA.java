@@ -7,9 +7,11 @@ package desafio2media;
 
 import desafio2media.Clases.CD;
 import desafio2media.Clases.DVD;
+import desafio2media.Clases.Libro;
 import desafio2media.conexion.ConexionBD;
 import desafio2media.conexion.DaoCd;
 import desafio2media.conexion.DaoDvd;
+import desafio2media.conexion.DaoLibros;
 import java.awt.BorderLayout;
 import java.awt.Dialog;
 import java.awt.Dimension;
@@ -42,12 +44,15 @@ public class PRUEBA extends JApplet {
        private static ArrayList<CD> cds = new ArrayList<>();
        public static DaoDvd DvdDao = new DaoDvd();
        private static ArrayList<DVD> dvds = new ArrayList<>();
+       public static DaoLibros LibDao = new DaoLibros();
+       private static ArrayList<Libro> Libs = new ArrayList<>();
        
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        verEquipos();
+        agregarLibro();
+        
     }
     public static void verEquipos() {
        
@@ -119,5 +124,24 @@ public class PRUEBA extends JApplet {
         dialog.setLocationRelativeTo(null);
     }
   
-    
+    private static void agregarLibro() {
+          Libs = LibDao.INSERTAll();
+        String id = JOptionPane.showInputDialog("Ingrese código de identificación interna:");
+        String titulo = JOptionPane.showInputDialog("Ingrese El titulo:");
+        int idGenero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el IdGenero"));
+        int stock = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de unidades disponibles del libro:"));
+        int idAutor = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el IdAutor:"));
+        int IdEditorial = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el IdEditorial"));
+        int numPaginas = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el IdEditorial"));
+        String isbn =(JOptionPane.showInputDialog("Ingrese el ISBN del libro:"));
+        int AnioPublic = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el IdEditorial"));
+
+        Libro nuevoLibro = new Libro(id, titulo, idGenero, stock, idAutor, IdEditorial, numPaginas, isbn,AnioPublic);
+        Libs.add(nuevoLibro); 
+
+        // Aquí se tiene que agregar el código para conectarte a la base de datos y guardar el objeto 'libro'
+
+        JOptionPane.showMessageDialog(null, "Libro agregado correctamente.");
+    }
 }
+
